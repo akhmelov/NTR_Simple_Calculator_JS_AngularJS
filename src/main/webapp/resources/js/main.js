@@ -25,7 +25,7 @@ var myApp = angular.module('myApp',[])
             if (!textInput)
                 textInput = "";
             if(val == "." && typeof textInput === "string" && textInput.indexOf(".") != -1
-                || textInput.length > 10 || (textInput == "0" && val == "0"))
+                || textInput.length > 11 || (textInput == "0" && val == "0"))
                 return;
             if (isActionClickLast || textInput == "ERROR")
                 textInput = val;
@@ -164,7 +164,7 @@ var myApp = angular.module('myApp',[])
                 }
                 else
                 {
-                    textInput = (textInput.length > 11) ? textInput.substring(0, 11) : textInput;
+                    textInput = ((tmpTextInput + "").length > 11) ? (tmpTextInput + "").substring(0, 11) : textInput;
                 }
             }
             if (textInput == "ERROR" || textInput == "OUT OF RANGE")
